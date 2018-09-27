@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="index">
+<button bindtap='navigateTo'>创建监控任务</button> 
+  </view>
+</view>
