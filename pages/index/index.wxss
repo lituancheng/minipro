@@ -1,21 +1,10 @@
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.insert-btn{
+        background-color: #E6E6FA;
+        color:  #4A4A4A;
+        font-family: PingFangSC-Regular;
+        font-size: 34rpx;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
+.insert-btn::after{
+  border: none;
 }

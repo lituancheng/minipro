@@ -4,7 +4,6 @@ const app = getApp();
 
 Page({
   data: {
-    userInfo: {},
     order: {
       icon: 'images/order.png',
       text: '我的任务',
@@ -23,16 +22,13 @@ Page({
   onShow(){
   },
   onLoad() {
-    this.setData({
-      userInfo: app.globalData.userInfo
-    });
   },
   navigateTo(e){
     let url = e.currentTarget.dataset.url;
     if(typeof url === "undefined"){
       return;
     }
-    wx.switchTab({
+    wx.redirectTo({
       url: "/" + url,
     })
   }

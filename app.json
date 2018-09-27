@@ -2,32 +2,14 @@
   "pages":[
     "pages/index/index",
     "pages/user/user",
-    "pages/mission/mission"
+    "pages/mission/add/mission_add"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
-  },
-  "tabBar": {
-    "color": "#000",
-    "borderStyle": "white",
-    "backgroundColor": "#fff",
-    "selectedColor": "#fc3151",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "iconPath": "images/index.png",
-        "selectedIconPath": "images/index-selected.png",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/user/user",
-        "iconPath": "images/user.png",
-        "selectedIconPath": "images/user-selected.png",
-        "text": "我的"
-      }
-    ]
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "自如抢房",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#6f6f6f",
+    "enablePullDownRefresh": false
   }
 }

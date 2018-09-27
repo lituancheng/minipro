@@ -1,0 +1,32 @@
+/* pages/components/TabBar/TabBar.wxss */
+
+.tab-bars{
+        height: 96rpx;
+        position: fixed;
+        bottom:0rpx;
+        background-color: #ffffff;
+        z-index: 200;
+        width: 100%;
+        font-size: 20rpx;
+        box-shadow: 0 4rpx 16rpx 0 rgba(0,0,0,0.2);
+}
+.tab-bars .tab{
+        width: 50%;
+        text-align: center;
+        color: #273142;
+        opacity: 0.5;
+        float: left;
+        height: 100%;
+}
+.tab-bars .tab.active{
+        color: #2C61E8;
+        opacity: 1;
+}
+.tab-bars .tab image{
+        width: 40rpx;
+        height: 36rpx;
+        display: block;
+        margin: auto;
+        margin-top: 20rpx;
+        margin-bottom: 4rpx;
+}

@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="add_mission">
+  <form bindsubmit='add_mission'>
+    <view class='input-group'>
+            <view class='item-input'>
+                    <label class='label'>房源链接</label>
+                    <input placeholder='请长按粘贴房源链接' bindinput="listenerSourceUrlInput"  class='value' name="sourceUrl" value='{{sourceUrl}}'></input>
+            </view>
+            <view class='item-input'>
+                    <label class='label'>接收邮箱</label>
+                    <input placeholder='请输入接收提醒邮箱' bindinput="listenerEmailInput" class='value' name="email" value='{{email}}'></input>
+            </view>
+    </view>
+    <view class='tips'>※请核对信息信息，无问题点击提交按钮</view>
+
+    <view class='btn-submits'>
+            <button form-type='submit' class='primary'>开始监控</button>
+    </view>
+</form>
+</view>

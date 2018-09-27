@@ -1,0 +1,15 @@
+<!--pages/components/TabBar/TabBar.wxml-->
+<view class='tab-bars'>
+        <view wx:if="{{tab_active=='mission'}}" class='tab active'>
+                <image src="/images/mission_active.png"></image>首页
+        </view>
+        <navigator open-type='reLaunch' url="/pages/index/index" wx:else class='tab'>
+                <image src="/images/mission.png"></image>首页
+        </navigator>
+        <view wx:if="{{tab_active=='user'}}" class='tab active'>
+                <image src="/images/user_active.png"></image>个人中心
+        </view>
+        <navigator open-type='reLaunch' url="/pages/user/user"  wx:else class='tab'>
+                <image src="/images/user.png"></image>个人中心
+        </navigator>
+</view>

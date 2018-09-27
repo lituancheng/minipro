@@ -1,6 +1,5 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="index">
-<button bindtap='navigateTo'>创建监控任务</button> 
-  </view>
+<button class='insert-btn' bindtap='navigateTo'> +创建监控任务      <Plus/></button>
 </view>
+<TabBar></TabBar>

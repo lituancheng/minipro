@@ -9,12 +9,15 @@
 
 <scroll-view scroll-y="trues" class="user">
     <view class="info">
-        <view class="info-wrap">
-            <image class="info-icon" src="{{userInfo.avatarUrl}}" catchtap="navigateTo" data-url-type="userinfo"></image>
-            <view class="info-name">{{userInfo.nickName}}</view>
+        <view class="userinfo">
+        <view class="userinfo-avatar">
+          <open-data  type="userAvatarUrl" class="userinfo-avatar"></open-data>
         </view>
+          <open-data type="userNickName"></open-data>
+      </view>
     </view>
 
     <template is="list" data="{{...order}}"></template>
     <template wx:for="{{list}}" is="list" data="{{...item}}"></template>
 </scroll-view>
+<TabBar  tab_active="user"></TabBar>
