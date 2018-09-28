@@ -20,7 +20,9 @@ Page({
     wx.showLoading({
       title: '提交中',
     });
-    ziru.post("/api/mission/add", e.detail.value).then(data => {
+    let rqd = e.detail.value;
+    rqd.token = wx.getStorageSync('token');
+    ziru.post("/api/mission/add", rqd).then(data => {
       wx.showToast({ title: "添加成功", icon: "success", duration: 1000 })
       setTimeout(
         function () {

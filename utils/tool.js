@@ -9,8 +9,7 @@ let status_map = {
 }
 
 let config = {
-  'content-type': 'application/x-www-form-urlencoded',
-  token: wx.getStorageSync("token")
+  'content-type': 'application/x-www-form-urlencoded'
 }
 let success = function (data, resolve, reject) {
   // console.log(data);
@@ -54,7 +53,6 @@ let complete = function (e) {
 }
 const ziru = {}
 ziru.post = function (url, rqd) {
-  rqd.token = config['token'];
   return new Promise((res, rej) => {
     let option = {
       url: host + url,
@@ -73,7 +71,6 @@ ziru.post = function (url, rqd) {
   })
 }
 ziru.get = function (url, rqd) {
-  rqd.token = config['token'];
   return new Promise((res, rej) => {
     let option = {
       url: host + url,
@@ -95,17 +92,19 @@ ziru.get = function (url, rqd) {
 //获取登陆用户信息
 ziru.login = function(){
   let that = this;
-  var code = null;
   return login()
-    .then((res) => {
-      code = res.code;
-      ziru.get("/wx/auth/login", { code: code }).then(data => {
-        if (data.data.code === 0) {
-          var token = data.data.data;
-          wx.setStorageSync("token", token);
-        }
+    .then((res) => { return res.code; })
+    .then((code) => {
+      return code;
+    }).then((code) => {
+      ziru.get("/wx/auth/login", {"code": code}).then((res) => {
+        let token = res.data.data;
+        wx.setStorageSync('token', token);
+        return token;
       })
-    })
+    }, (promis) => {
+    }, (p) => {
+    });  
 }
 
 // 格式化日期

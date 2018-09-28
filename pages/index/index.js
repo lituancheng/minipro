@@ -7,14 +7,7 @@ Page({
     list: []
   },
   onLoad: function () {
-    var that = this;
-    let timer = setInterval(function () {
-      let token = wx.getStorageSync('token');
-      if (token != "" && typeof token !== "undefined") {
-        clearInterval(timer);
-        that.getList();
-      }
-    }.bind(this), 500)
+    this.getList();
   },
   onShow: function () {
 
@@ -30,7 +23,7 @@ Page({
   },
   getList() {
     var that = this;
-    ziru.get("/api/mission/list", {}).then(
+    ziru.get("/api/mission/list", {'token': wx.getStorageSync('token')}).then(
       data => {
         that.setData(
           { 'list': data.data }
