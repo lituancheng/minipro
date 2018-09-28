@@ -1,10 +1,129 @@
 /**index.wxss**/
+.button_container{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  box-sizing: border-box;
+}
 .insert-btn{
-        background-color: #E6E6FA;
+        background-color: #E6EDEF;
         color:  #4A4A4A;
         font-family: PingFangSC-Regular;
         font-size: 34rpx;
 }
 .insert-btn::after{
   border: none;
+}
+.content{
+        padding:30rpx;
+}
+page{
+        height: 100%;
+}
+.room{
+        font-size: 28rpx;
+        font-family: PingFangSC-Regular;
+        background-color: #E6EDEF;
+        color:  #000000;
+        padding: 40rpx 30rpx ;
+        margin-bottom: 20rpx;
+        border-radius: 8rpx;
+       box-shadow: 0 4rpx 8rpx 0 rgba(0,0,0,0.10);
+}
+.room_status{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        z-index: 100;
+        line-height: 114rpx;
+        font-size: 34rpx;
+        margin-bottom: 28rpx;
+        font-family: PingFang-SC-Heavy;
+        margin-left: 280rpx; 
+}
+.room_status>label{
+        width: 280rpx;
+        text-align: center;
+        font-weight: 500;
+}
+.room_status>text{
+        font-size: 24rpx;
+        color: #7F7F7F;
+        line-height: normal;
+}
+.info-item{
+        display: flex;
+        justify-content: space-between;
+        line-height: 50rpx;
+        font-size: 28rpx;
+        font-family: PingFangSC-Regular;
+}
+.info-item>text{
+        color: #7F7F7F;
+}
+
+.room_status>text.running{
+        background-color: #5EDB4D;
+        border-radius: 80rpx;
+        width: 110rpx;
+        height: 50rpx;
+        line-height: 50rpx;
+        text-align: center;
+        font-weight: bolder;
+        color: #000000;
+}
+.room_status>text.stop{
+        background-color: #DB4D60;
+        border-radius: 80rpx;
+        width: 110rpx;
+        height: 50rpx;
+        line-height: 50rpx;
+        text-align: center;
+        font-weight: bolder;
+        color: #FFFFFF;
+}
+.status{
+        letter-spacing: 0rpx;
+        font-size: 24rpx;
+        height: auto;
+}
+.status .using{
+        padding: 6rpx 20rpx;
+        border-radius: 4rpx;
+        border:2rpx solid #FFFFFF;
+        opacity: 0.8;
+}
+.status .free{
+        background-color: rgba(0,0,0,0.3);
+        border-radius: 4rpx;
+        padding: 6rpx 32rpx;
+        color: rgba(255, 255, 255, 0.9);
+}
+
+.empty{
+        position: relative;
+        height: 100%;
+        width: 100%;
+}
+.empty .preview{
+        width: 230rpx;
+        height: 468rpx;
+        position: absolute;
+        margin: auto;
+        left: 0rpx;
+        right: 0rpx;
+        top: 0rpx;
+        bottom: 0rpx;
+}
+.empty .preview image{
+        width: 100%;
+        height: 274rpx;
+}
+.empty .preview text{
+        color: #444444;
+        font-size: 24rpx;
+        opacity: 0.5;
 }

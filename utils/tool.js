@@ -1,4 +1,7 @@
 const { host } = require("./config");
+import promiseFromWXCallback from '../lib/promiseFromWXCallback';
+const login = promiseFromWXCallback(wx.login);
+
 let status_map = {
   500: "服务器错误",
   404: "地址错误",
@@ -22,15 +25,23 @@ let success = function (data, resolve, reject) {
     }
     if (res.code === 0) {
       // 数据正常
+      wx.hideLoading();
       resolve(res);
     } else if (res.code === -1) {
       // 内部错误
+      wx.hideLoading();
       wx.showToast({ title: "服务器内部错误", icon: "none", duration: 2000 })
+    } else if (res.code === 1001001) {
+      // 登录状态失效
+      wx.hideLoading();
+      ziru.login();
     } else {
       // 定义的错误
+      wx.hideLoading();
       wx.showToast({ title: res.errMsg, icon: "none", duration: 2000 })
     }
   } else {
+    wx.hideLoading();
     wx.showToast({ title: msg, icon: "none", duration: 2000 })
   }
 }
@@ -79,6 +90,22 @@ ziru.get = function (url, rqd) {
     }
     wx.request(option);
   })
+}
+
+//获取登陆用户信息
+ziru.login = function(){
+  let that = this;
+  var code = null;
+  return login()
+    .then((res) => {
+      code = res.code;
+      ziru.get("/wx/auth/login", { code: code }).then(data => {
+        if (data.data.code === 0) {
+          var token = data.data.data;
+          wx.setStorageSync("token", token);
+        }
+      })
+    })
 }
 
 // 格式化日期

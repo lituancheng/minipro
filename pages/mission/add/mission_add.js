@@ -2,8 +2,6 @@ const {
   ziru
 } = require('../../../utils/tool.js');
 import resource from '../../../lib/resource';
-//获取应用实例
-const app = getApp()
 
 Page({
   data: {
@@ -19,17 +17,18 @@ Page({
     this.data.email = e.detail.value;
   },
   add_mission(e) {
+    wx.showLoading({
+      title: '提交中',
+    });
     ziru.post("/api/mission/add", e.detail.value).then(data => {
-      if (data.code === 0) {
-        wx.showToast({ title: "添加成功", icon: "success", duration: 1000 })
-        setTimeout(
-          function () {
-            wx.redirectTo({
-              url: '/pages/index/index',
-            })
-          }
-          , 1000)
-      }
+      wx.showToast({ title: "添加成功", icon: "success", duration: 1000 })
+      setTimeout(
+        function () {
+          wx.redirectTo({
+            url: '/pages/index/index',
+          })
+        }
+        , 1000)
     })
   }
 })

@@ -1,5 +1,33 @@
 <!--index.wxml-->
-<view class="container">
+<view wx:if="{{list.length>0}}" class='content'>
+
+        <block wx:for="{{list}}" wx:key="roomName">
+                <view bindtap='show_detail' data-roomId='{{item.id}}'  hover-class='none' class='room'>
+                        <view class='room_status'>
+                                <text class='stop' wx:if="{{item.status === 1}}">已停止</text>
+                                <text class='running' wx:if="{{item.status === 0}}">监控中</text>
+                        </view>
+                        <view class='info-item'>
+                                <view>
+                                        <text class='icon-blue'></text>
+                                        <text>房源描述</text>
+                                </view>
+                                <text>{{item.roomName||""}}</text>
+                        </view>
+                        <view class='info-item'>
+                                <view>
+                                        <text class='icon-green'></text>
+                                        <text>房源状态</text>
+                                </view>
+                                <text wx:if="{{item.roomStatus === 1}}">待签约</text>
+                                <text wx:if="{{item.roomStatus === 2}}">已入住</text>
+                                <text wx:if="{{item.roomStatus === 3}}">已预订</text>  
+                                <text wx:if="{{item.roomStatus === 4}}">配置中</text>  
+                     </view>
+                </view>
+        </block>
+</view>
+<view class="button_container">
 <button class='insert-btn' bindtap='navigateTo'> +创建监控任务      <Plus/></button>
 </view>
 <TabBar></TabBar>

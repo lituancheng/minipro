@@ -2,5 +2,6 @@
   "navigationBarTitleText": "首页",
   "usingComponents": {
     "TabBar": "/components/TabBar/TabBar"
-  }
+  },
+  "enablePullDownRefresh": true
 }
