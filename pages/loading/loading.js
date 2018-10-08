@@ -21,9 +21,18 @@ Page({
     if (token == "" || typeof token == "undefined") {
       this.toLogin();
     }else{
-      wx.redirectTo({
-        url: '/pages/index/index',
-      })
+      var that = this;
+      ziru.get("/wx/auth/check_session", {}).then(
+        data => {
+          if(!data.data){
+            that.toLogin();
+          }else{
+            wx.redirectTo({
+              url: '/pages/index/index',
+            })
+          }
+        }
+      );
     }
   },
 

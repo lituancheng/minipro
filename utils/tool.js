@@ -53,6 +53,7 @@ let complete = function (e) {
 }
 const ziru = {}
 ziru.post = function (url, rqd) {
+  rqd.token = wx.getStorageSync('token');
   return new Promise((res, rej) => {
     let option = {
       url: host + url,
@@ -71,6 +72,7 @@ ziru.post = function (url, rqd) {
   })
 }
 ziru.get = function (url, rqd) {
+  rqd.token = wx.getStorageSync('token');
   return new Promise((res, rej) => {
     let option = {
       url: host + url,
@@ -124,8 +126,26 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+//正则判断
+function regTest(str, reg) {
+  if (reg.test(str))
+    return true;
+  return false;
+}
+//是否为中文
+function isChinese(str) {
+  var reg = /^[\u0391-\uFFE5]+$/;
+  return Regular(str, reg);
+}
+//去左右空格;
+function trim(s) {
+  return s.replace(/(^\s*)|(\s*$)/g, "");
+}
 
 module.exports = {
   ziru: ziru,
-  formatTime: formatTime
+  formatTime: formatTime,
+  regTest: regTest,
+  isChinese: isChinese,
+  trim: trim
 };

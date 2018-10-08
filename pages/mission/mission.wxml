@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="add_mission">
-  <form bindsubmit='add_mission'>
+  <form bindsubmit='saveMission'>
     <view class='input-group'>
             <view class='item-input'>
                     <label class='label'>房源链接</label>
@@ -11,10 +11,17 @@
                     <input placeholder='请输入接收提醒邮箱' bindinput="listenerEmailInput" class='value' name="email" value='{{email}}'></input>
             </view>
     </view>
-    <view class='tips'>※请核对信息信息，无问题点击提交按钮</view>
-
+    <view class='tips'>※房源链接：打开自如App→进入想要监控的房源页面→点击右上角分享按钮并选择分享到QQ→在QQ中打开分享的链接→点击右上角选择复制链接</view>
     <view class='btn-submits'>
-            <button form-type='submit' class='primary'>开始监控</button>
+            <button form-type='submit' class='primary'>
+              <text wx:if="{{id == null}}">开始监控</text>
+              <text wx:if="{{id != null}}">修改任务</text>
+            </button>
+    </view>
+    <view wx:if="{{id != null}}">
+            <button class='btn-delete' bindtap='deleteMission'>
+              <text>删除任务</text>
+            </button>
     </view>
 </form>
 </view>

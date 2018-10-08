@@ -33,3 +33,7 @@
 .add_mission .submitBtn{
   position: fixed;
 }
+.btn-delete{
+  margin-top: 0.5rem;
+  background-color: #E60050;
+}

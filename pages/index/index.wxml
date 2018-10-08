@@ -2,7 +2,7 @@
 <view wx:if="{{list.length>0}}" class='content'>
 
         <block wx:for="{{list}}" wx:key="roomName">
-                <view bindtap='show_detail' data-roomId='{{item.id}}'  hover-class='none' class='room'>
+                <view bindtap='showDetail' data-missionid='{{item.id}}'  hover-class='none' class='room'>
                         <view class='room_status'>
                                 <text class='stop' wx:if="{{item.status === 1}}">已停止</text>
                                 <text class='running' wx:if="{{item.status === 0}}">监控中</text>

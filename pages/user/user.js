@@ -12,7 +12,7 @@ Page({
       {
         icon: 'images/tel.png',
         text: '客服微信',
-        tip: 'lituancheng',
+        tip: 'lyytc962464',
       }
     ]
   },

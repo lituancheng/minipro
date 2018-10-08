@@ -3,7 +3,7 @@
     "pages/loading/loading",
     "pages/index/index",
     "pages/user/user",
-    "pages/mission/add/mission_add"
+    "pages/mission/mission"
   ],
   "window": {
     "backgroundTextStyle": "light",

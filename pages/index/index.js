@@ -4,7 +4,12 @@ const {
 
 Page({
   data: {
-    list: []
+    list: [],
+    nick_name: '',
+    gender: '',
+    province: '',
+    city: '',
+    country: ''
   },
   onLoad: function () {
     this.getList();
@@ -18,12 +23,12 @@ Page({
       return;
     }
     wx.navigateTo({
-      url: '/pages/mission/add/mission_add',
+      url: '/pages/mission/mission',
     })
   },
   getList() {
     var that = this;
-    ziru.get("/api/mission/list", {'token': wx.getStorageSync('token')}).then(
+    ziru.get("/api/mission/list", {}).then(
       data => {
         that.setData(
           { 'list': data.data }
@@ -34,5 +39,11 @@ Page({
   onPullDownRefresh: function () {
     this.getList();
     wx.stopPullDownRefresh();
+  },
+  showDetail(e) {
+    let missionId = e.currentTarget.dataset.missionid;
+    wx.navigateTo({
+      url: "/pages/mission/mission" + "?missionId=" + missionId
+    })
   }
 })
