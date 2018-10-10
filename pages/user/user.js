@@ -6,13 +6,22 @@ Page({
       icon: 'images/order.png',
       text: '我的任务',
       tip: '',
-      url: 'pages/index/index'
+      url: 'pages/index/index',
+      has_acor: true
     },
     list: [
+      {
+        icon: 'images/phone.png',
+        text: '我的手机号',
+        tip: '',
+        url: 'pages/phone/phone',
+        has_acor: true
+      },
       {
         icon: 'images/tel.png',
         text: '客服微信',
         tip: 'lyytc962464',
+        has_acor: false
       }
     ]
   },

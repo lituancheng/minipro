@@ -3,7 +3,8 @@
     "pages/loading/loading",
     "pages/index/index",
     "pages/user/user",
-    "pages/mission/mission"
+    "pages/mission/mission",
+    "pages/phone/phone"
   ],
   "window": {
     "backgroundTextStyle": "light",
