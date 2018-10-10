@@ -45,8 +45,10 @@ Page({
       wx.showToast({ title: "邮箱格式不正确", icon: "none", duration: 1500 });
       return;
     }
+    console.log(e.detail.formId);
     rqd.sourceUrl = sourceUrl;
     rqd.email = email;
+    rqd.formId = e.detail.formId;
     wx.showLoading({
       title: '提交中',
     });

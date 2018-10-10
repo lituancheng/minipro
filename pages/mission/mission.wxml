@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class="add_mission">
-  <form bindsubmit='saveMission'>
+  <form bindsubmit='saveMission' report-submit="true">
     <view class='input-group'>
             <view class='item-input'>
                     <label class='label'>房源链接</label>
