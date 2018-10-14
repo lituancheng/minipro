@@ -36,13 +36,16 @@ Page({
     let rqd = {
       phone: phone
     };
-    ziru.get("/api/mission/get", rqd).then(data => {
-      let detail = data.data;
-      that.setData({
-        'sourceUrl': detail.sourceUrl,
-        'email': detail.email,
-        'id': detail.id
-      });
+    ziru.get("/api/user/bind_phone", rqd).then(data => {
+      wx.setStorageSync('phone', phone);
+      wx.showToast({ title: "绑定成功", icon: "success", duration: 1000 })
+      setTimeout(
+        function () {
+          wx.redirectTo({
+            url: '/pages/user/user',
+          })
+        }
+        , 1000)
     })
   }
 })

@@ -13,6 +13,10 @@ Page({
   },
   onLoad: function () {
     this.getList();
+    let phone = wx.getStorageSync('phone');
+    if(phone == "" || typeof phone == "undefined"){
+      this.getPhone();
+    }
   },
   onShow: function () {
 
@@ -45,5 +49,15 @@ Page({
     wx.navigateTo({
       url: "/pages/mission/mission" + "?missionId=" + missionId
     })
+  },
+  getPhone() {
+    ziru.get("/api/user/get_phone", {}).then(
+      data => {
+        let phone = data.data;
+        if(phone != null){
+          wx.setStorageSync('phone', phone);
+        }
+      }
+    )
   }
 })

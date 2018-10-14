@@ -41,6 +41,17 @@ Page({
   onShow(){
   },
   onLoad() {
+    let phone = wx.getStorageSync('phone');
+    if(phone != "" && typeof phone != "undefined"){
+      let phoneTip = "list[0].tip";
+      let phoneAcor = "list[0].has_acor";
+      let phoneUrl = "list[0].url";
+      this.setData({
+        [phoneTip]: phone,
+        [phoneAcor]: false,
+        [phoneUrl]: null
+      })
+    }
   },
   navigateTo(e){
     let url = e.currentTarget.dataset.url;
