@@ -1,0 +1,47 @@
+.contain{
+  height:80%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  padding:100rpx 0;
+  box-sizing:border-box;
+
+}
+.title{
+  padding: 2rem;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: Microsoft YaHei, Arial, Helvetica, sans-serif;
+}
+.input{
+  width: 600rpx;
+  height: 300rpx;
+  padding: 20rpx;
+  border: 0.1rem solid black;
+  margin: 0 1.5rem 1.5rem 1.5rem;
+  border-radius: 1rem;
+  font-size: 45rpx; 
+}
+.submit{
+  width: 8rem;
+  text-align: center;
+  margin: 0.5rem auto;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  background-color: #00C3FF;
+  color: #fbfbfb;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.8rem;
+  border-radius: 0.5rem;
+}
+.back{
+  margin-top: 0.5rem;
+  width: 6rem;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 0.7rem;
+  background-color: #6E6E6E;
+}

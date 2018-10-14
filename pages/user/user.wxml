@@ -2,7 +2,7 @@
     <view class="list" hover-class="none" data-tip="{{tip}}" data-url="{{url}}" catchtap='navigateTo'>
         <view class="list-icon-wrap"><image src="{{icon}}" class="list-icon"></image></view>
         <view class="list-text">{{text}}</view>
-        <view class="arrow-wrap">{{tip}}
+        <view class="arrow-wrap"><text selectable='true'>{{tip}}</text>
         <view wx:if="{{has_acor}}">
           <image src="images/accessory.png" class="list-arrow"></image>
         </view>

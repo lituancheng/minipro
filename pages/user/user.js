@@ -18,6 +18,18 @@ Page({
         has_acor: true
       },
       {
+        icon: 'images/dashang.png',
+        text: '赞赏一下',
+        url: 'pages/dashang/dashang',
+        has_acor: true
+      },
+      {
+        icon: 'images/advice.png',
+        text: '意见or建议',
+        url: 'pages/advice/advice',
+        has_acor: true
+      },
+      {
         icon: 'images/tel.png',
         text: '客服微信',
         tip: 'lyytc962464',

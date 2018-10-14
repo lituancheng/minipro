@@ -9,11 +9,11 @@
   box-sizing: border-box;
 }
 .insert-btn{
-        background-color: #E6EDEF;
-        color:  #4A4A4A;
-        font-family: PingFangSC-Regular;
-        margin-top: 10rpx;
-        font-size: 34rpx;
+  background-color: #E6EDEF;
+  color:  #4A4A4A;
+  font-family: PingFangSC-Regular;
+  margin-top: 1.2rem;
+  font-size: 34rpx;
 }
 .insert-btn::after{
   border: none;

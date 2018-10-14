@@ -4,7 +4,9 @@
     "pages/index/index",
     "pages/user/user",
     "pages/mission/mission",
-    "pages/phone/phone"
+    "pages/phone/phone",
+    "pages/dashang/dashang",
+    "pages/advice/advice"
   ],
   "window": {
     "backgroundTextStyle": "light",

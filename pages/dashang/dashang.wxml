@@ -1,0 +1,8 @@
+<view class="container">
+<text decode='true' class='title'>&nbsp;尊敬的用户：</text>
+<text decode='true' class='shengming'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于此小程序作者是个人开发者，服务器费用和短信费用均是作者承担。而最近用户量的上升，使得支出日益增长。因此如果您觉得本小程序好用，请随意打赏，帮助小程序得以运转下去！</text>
+<view>
+  <button class='shang' bindtap='dashang'>打赏</button>
+  <button class='bushang' bindtap='goBack'>不赏，离开</button>
+</view>
+</view>

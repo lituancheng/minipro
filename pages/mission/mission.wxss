@@ -1,31 +1,31 @@
 .add_mission {
   font-size: 0.65rem;
-    margin-top: 0.5rem;
-    background-color: #FFF;
-    padding: 0 0.4rem;
+  margin-top: 0.5rem;
+  background-color: #FFF;
+  padding: 0 0.4rem;
 }
 .add_mission .add_mission_view {
 	position: relative;
-    height: 2.1rem;
-    line-height: 2.1rem;
-    border-bottom: 1px solid #EFEFEF;
-    padding: 0 0.35rem;
+  height: 2.1rem;
+  line-height: 2.1rem;
+  border-bottom: 1px solid #EFEFEF;
+  padding: 0 0.35rem;
 }
 .add_mission .add_mission_view text {
   width: 3rem;
-    text-align: justify;
-    float: left;
+  text-align: justify;
+  float: left;
 }
 .add_mission .add_mission_view input {
   height: 1.2rem;
-    width: 11.5rem;
-    line-height: 1.2rem;
-    border: none;
-    outline: none;
-    font-size: 0.65rem;
-    color: #000;
-    vertical-align: middle;
-    display: inline-block;
+  width: 11.5rem;
+  line-height: 1.2rem;
+  border: none;
+  outline: none;
+  font-size: 0.65rem;
+  color: #000;
+  vertical-align: middle;
+  display: inline-block;
 }
 .add_mission .add_mission_view input:focus{
   border: none;
