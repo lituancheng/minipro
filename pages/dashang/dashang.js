@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    phone: ''
+    
   },
 
   /**
@@ -13,14 +13,14 @@ Page({
   onLoad: function (options) {
     
   },
-  dashang() {
+  dashang(){
     wx.previewImage({
-      urls: ['http://i2.bvimg.com/665124/6e79f2115ab9c311.png'],
+      urls: ['http://i1.bvimg.com/665124/bb51c8b74552988f.png']
     })
   },
-  goBack() {
+  goBack(){
     wx.redirectTo({
-      url: '/pages/user/user',
+      url: '/pages/index/index',
     })
   }
 })

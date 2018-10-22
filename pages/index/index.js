@@ -59,5 +59,7 @@ Page({
         }
       }
     )
+  },
+  onShareAppMessage(){
   }
 })

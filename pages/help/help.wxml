@@ -1,0 +1,20 @@
+<view>
+  <view class='banner'>监控房源就用自如抢房</view>
+  <view class='speed-view'>
+    当前速度：<text>{{curr_speed}}</text>
+  </view>
+  <progress percent="{{percent}}" color="#33DAFF" class='progress'/>
+  <button wx:if="{{!haveHelp}}" class='help-btn' hover-class='help-btn-hover' bindtap='toHelp'>助力好友加速</button>
+  <button wx:else class='have-help-btn'>已助力</button>
+  <button class='me-too-btn' hover-class='me-too-btn' bindtap='iWantIt'>我也要抢房</button>
+  <view class='helpers_title'>
+    好友助力列表
+  </view>
+  <block wx:for="{{helper_list}}">
+    <view class='helpers_view'>
+      <text decode='true'>
+      <text wx:if="{{item.isMe}}">我已</text><text wx:else>好友</text>助力了<text style='font-weight:bold'>{{item.num}}</text>个加速包&nbsp;&nbsp;&nbsp;{{item.createTime}}
+      </text>
+    </view>
+  </block>
+</view>

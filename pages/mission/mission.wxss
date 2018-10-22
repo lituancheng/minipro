@@ -37,3 +37,28 @@
   margin-top: 0.5rem;
   background-color: #E60050;
 }
+.bottom-view{
+  margin: 40rpx auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  width: 60%;
+}
+.cur-spd{
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.help-btn {
+  width: 45%;
+  background-color: #00B321;
+  color: white;
+}
+.tips2{
+  color: #000000;
+  font-weight: bold;
+  font-size: 24rpx;
+  padding: 20rpx 30rpx;
+  opacity: 0.6;
+  margin:10rpx 0rpx;
+  margin-top: -40rpx;
+}

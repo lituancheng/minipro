@@ -7,6 +7,7 @@ Page({
       text: '我的任务',
       tip: '',
       url: 'pages/index/index',
+      func: 'redirectTo',
       has_acor: true
     },
     list: [
@@ -15,18 +16,20 @@ Page({
         text: '我的手机号',
         tip: '',
         url: 'pages/phone/phone',
+        func: 'navigateTo',
         has_acor: true
       },
       {
         icon: 'images/dashang.png',
         text: '赞赏一下',
-        url: 'pages/dashang/dashang',
+        func: 'showImg',
         has_acor: true
       },
       {
         icon: 'images/advice.png',
         text: '意见or建议',
         url: 'pages/advice/advice',
+        func: 'navigateTo',
         has_acor: true
       },
       {
@@ -58,8 +61,25 @@ Page({
     if(typeof url === "undefined"){
       return;
     }
+    wx.navigateTo({
+      url: "/" + url,
+    })
+  },
+  redirectTo(e) {
+    let url = e.currentTarget.dataset.url;
+    if (typeof url === "undefined") {
+      return;
+    }
     wx.redirectTo({
       url: "/" + url,
     })
+  },
+  showImg(url){
+    wx.previewImage({
+      urls: ['http://i1.bvimg.com/665124/bb51c8b74552988f.png'],
+    })
+  },
+  onShareAppMessage() {
+
   }
 });

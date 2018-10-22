@@ -1,9 +1,8 @@
-<view class="contain">
-<text decode='true' class='title'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您宝贵的意见就是我前进的方向，请于下方填写您的意见或建议：</text>
-<form bindsubmit='submit'>
-  <textarea class='input' name='advice'>
-  </textarea>
-  <button form-type='submit' class='submit'>写好了，提交</button>
-  <button class='back' bindtap='goBack'>不写了，返回</button>
-</form>
+<view>
+  <text class='title'>意见描述</text>
+  <form bindsubmit='submit'>
+    <textarea class='input' name='advice' placeholder='请输入意见描述' placeholder-class='hint'>
+    </textarea>
+    <button form-type='submit' class='submit'>提交</button>
+  </form>
 </view>

@@ -8,7 +8,9 @@ Page({
   data: {
     sourceUrl: '',
     email: '',
-    id: null
+    id: null,
+    status: null,
+    curr_speed: '低速'
   },
   onLoad: function (options) {
     if (typeof options.missionId != "undefined"){
@@ -18,10 +20,25 @@ Page({
       };
       ziru.get("/api/mission/get", rqd).then(data => {
         let detail = data.data;
+        let level = detail.level;
+        let curr_speed = '';
+        if(level == 1){
+          curr_speed = '低速';
+        } else if (level == 2) {
+          curr_speed = '中速';
+        } else if (level == 3) {
+          curr_speed = '快速';
+        } else if (level == 4) {
+          curr_speed = '高速';
+        } else {
+          curr_speed = 'VIP';
+        }
         that.setData({
           'sourceUrl': detail.sourceUrl,
           'email': detail.email,
-          'id': detail.id
+          'id': detail.id,
+          'status': detail.status,
+          'curr_speed': curr_speed
         });
       })
     }
@@ -99,5 +116,14 @@ Page({
         }
       }.bind(this)
     })
+  },
+  onShareAppMessage: function () {
+    let missionId = this.data.id;
+    let path = '/pages/help/help?missionId=' + missionId + '';
+    return {
+      title: '我正在监控自如房源，求助力',
+      imageUrl: '/images/help_cover.png',
+      path: path
+    }
   }
 })

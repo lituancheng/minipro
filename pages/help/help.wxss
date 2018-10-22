@@ -1,0 +1,64 @@
+.banner{
+  height: 200rpx;
+  line-height: 200rpx;
+  text-align: center;
+  color: #FFF;
+  font-weight: 900;
+  font-size: 40rpx;
+  background: url('http://i2.bvimg.com/665124/78ce4782429cba48.jpg') no-repeat fixed top;
+}
+.speed-view{
+  padding-top: 20rpx;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.progress{
+  margin: 10rpx auto;
+  width: 80%;
+}
+.help-btn{
+  margin-top: 20px;
+  width: 80%;
+  background-color: #0A95FF;
+  color: white;
+  border-radius: 98rpx;
+}
+.help-btn-hover {
+  background: #0A95FF;
+}
+.have-help-btn{
+  margin-top: 20px;
+  width: 80%;
+  background-color: #686764;
+  color: white;
+  border-radius: 98rpx;
+  font-weight: bold;
+}
+.me-too-btn{
+  margin-top: 5px;
+  width: 80%;
+  background-color: #FFF;
+  color: #0A95FF;
+  border-radius: 98rpx;
+  border: 1rpx solid #0A95FF;
+}
+.me-too-btn-hover {
+  background: #0A95FF;
+}
+.helpers_title{
+  text-align: center;
+  margin-top: 25rpx;
+  margin-bottom: 15rpx;
+  font-weight: bold;
+  font-size: 38rpx;
+}
+.helpers_view{
+  margin: 0 auto;
+  text-align: center;
+  width: 70%;
+  font-size: 28rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+}

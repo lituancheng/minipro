@@ -1,5 +1,5 @@
 <template name="list">
-    <view class="list" hover-class="none" data-tip="{{tip}}" data-url="{{url}}" catchtap='navigateTo'>
+    <view class="list" hover-class="none" data-tip="{{tip}}" data-url="{{url}}" catchtap='{{func}}'>
         <view class="list-icon-wrap"><image src="{{icon}}" class="list-icon"></image></view>
         <view class="list-text">{{text}}</view>
         <view class="arrow-wrap"><text selectable='true'>{{tip}}</text>

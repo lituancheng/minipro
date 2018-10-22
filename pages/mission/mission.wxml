@@ -12,8 +12,9 @@
             </view>
     </view>
     <view class='tips'>※房源链接：打开自如App→进入想要监控的房源页面→点击右上角分享按钮并选择分享到QQ→在QQ中打开分享的链接→点击右上角选择复制链接</view>
+    <view class='tips2' wx:if="{{status == 0}}">※如需变更所监控房源请选择修改任务，删除任务后加速包将一并消失</view>
     <view class='btn-submits'>
-            <button form-type='submit' class='primary'>
+            <button form-type='submit' class='primary' wx:if="{{status != 1}}">
               <text wx:if="{{id == null}}">开始监控</text>
               <text wx:if="{{id != null}}">修改任务</text>
             </button>
@@ -22,6 +23,10 @@
             <button class='btn-delete' bindtap='deleteMission'>
               <text>删除任务</text>
             </button>
+    </view>
+    <view class='bottom-view' wx:if="{{id != null}}">
+      <text class='cur-spd'>当前速度：{{curr_speed}}</text>
+      <button class='help-btn' wx:if="{{status == 0}}" open-type='share'>好友助力</button>
     </view>
 </form>
 </view>

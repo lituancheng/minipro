@@ -6,7 +6,8 @@
     "pages/mission/mission",
     "pages/phone/phone",
     "pages/dashang/dashang",
-    "pages/advice/advice"
+    "pages/advice/advice",
+    "pages/help/help"
   ],
   "window": {
     "backgroundTextStyle": "light",

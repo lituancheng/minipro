@@ -9,11 +9,14 @@
   box-sizing: border-box;
 }
 .insert-btn{
-  background-color: #E6EDEF;
-  color:  #4A4A4A;
-  font-family: PingFangSC-Regular;
-  margin-top: 1.2rem;
-  font-size: 34rpx;
+  margin-top: 30px;
+  width: 80%;
+  background-color: rgb(252, 126, 67);
+  color: white;
+  border-radius: 98rpx;
+}
+.insert-btn-hover {
+  background:  rgb(236, 179, 156);
 }
 .insert-btn::after{
   border: none;

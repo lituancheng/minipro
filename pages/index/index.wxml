@@ -28,6 +28,6 @@
         </block>
 </view>
 <view class="button_container">
-<button class='insert-btn' bindtap='navigateTo'> +创建监控任务      <Plus/></button>
+<button class='insert-btn' hover-class='insert-btn-hover' bindtap='navigateTo'> +创建监控任务      <Plus/></button>
 </view>
 <TabBar></TabBar>
