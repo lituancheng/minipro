@@ -14,34 +14,37 @@ Page({
   },
   onLoad: function (options) {
     if (typeof options.missionId != "undefined"){
-      var that = this;
-      let rqd = {
-        id: parseInt(options.missionId)
-      };
-      ziru.get("/api/mission/get", rqd).then(data => {
-        let detail = data.data;
-        let level = detail.level;
-        let curr_speed = '';
-        if(level == 1){
-          curr_speed = '低速';
-        } else if (level == 2) {
-          curr_speed = '中速';
-        } else if (level == 3) {
-          curr_speed = '快速';
-        } else if (level == 4) {
-          curr_speed = '高速';
-        } else {
-          curr_speed = 'VIP';
-        }
-        that.setData({
-          'sourceUrl': detail.sourceUrl,
-          'email': detail.email,
-          'id': detail.id,
-          'status': detail.status,
-          'curr_speed': curr_speed
-        });
-      })
+      this.getMissionInfo(options.missionId);
     }
+  },
+  getMissionInfo(missionId){
+    var that = this;
+    let rqd = {
+      id: parseInt(missionId)
+    };
+    ziru.get("/api/mission/get", rqd).then(data => {
+      let detail = data.data;
+      let level = detail.level;
+      let curr_speed = '';
+      if (level == 1) {
+        curr_speed = '低速';
+      } else if (level == 2) {
+        curr_speed = '中速';
+      } else if (level == 3) {
+        curr_speed = '快速';
+      } else if (level == 4) {
+        curr_speed = '高速';
+      } else {
+        curr_speed = 'VIP';
+      }
+      that.setData({
+        'sourceUrl': detail.sourceUrl,
+        'email': detail.email,
+        'id': detail.id,
+        'status': detail.status,
+        'curr_speed': curr_speed
+      });
+    })
   },
   listenerSourceUrlInput(e) {
     this.data.sourceUrl = e.detail.value;
@@ -68,29 +71,22 @@ Page({
     wx.showLoading({
       title: '提交中',
     });
+    let that = this;
     let id = this.data.id;
     if (id == null){
       ziru.post("/api/mission/add", rqd).then(data => {
         wx.showToast({ title: "添加成功", icon: "success", duration: 1000 })
-        setTimeout(
-          function () {
-            wx.redirectTo({
-              url: '/pages/index/index',
-            })
-          }
-          , 1000)
+        setTimeout(function(){
+          that.onLoad({ missionId: data.data.id });
+        }, 1000)
       })
     }else{
       rqd.id = id;
       ziru.post("/api/mission/update", rqd).then(data => {
         wx.showToast({ title: "修改成功", icon: "success", duration: 1000 })
-        setTimeout(
-          function () {
-            wx.redirectTo({
-              url: '/pages/index/index',
-            })
-          }
-          , 1000)
+        setTimeout(function () {
+          that.onLoad({ missionId: id });
+        }, 1000)
       })
     }
   },

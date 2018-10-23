@@ -29,7 +29,7 @@ Page({
     setTimeout(function(){
       wx.hideLoading()
     }, 2500)
-    let missionId = 143;
+    let missionId = options.missionId;
     this.setData({
       missionId: parseInt(missionId)
     })
