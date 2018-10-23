@@ -30,6 +30,15 @@ Page({
       wx.hideLoading()
     }, 2500)
     let missionId = options.missionId;
+    if(missionId == "" || typeof missionId == "undefined"){
+      wx.showToast({ title: "页面状态错误", icon: "none", duration: 1500 })
+      setTimeout(function(){
+        wx.redirectTo({
+          url: '/pages/index/index',
+        })
+      }, 1500);
+      return;
+    }
     this.setData({
       missionId: parseInt(missionId)
     })
