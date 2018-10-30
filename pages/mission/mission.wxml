@@ -13,6 +13,7 @@
     </view>
     <view class='tips'>※房源链接：打开自如App→进入想要监控的房源页面→点击右上角分享按钮并选择分享到QQ→在QQ中打开分享的链接→点击右上角选择复制链接</view>
     <view class='tips2' wx:if="{{status == 0}}">※如需变更所监控房源请选择修改任务，删除任务后加速包将一并消失</view>
+    <view class='tips2' wx:if="{{status == 0}}">※由于空气质量检测中的房源没有倒计时签约状态，所以强烈建议您邀请好友加速您的任务</view>
     <view class='btn-submits'>
             <button form-type='submit' class='primary' wx:if="{{status != 1}}">
               <text wx:if="{{id == null}}">开始监控</text>

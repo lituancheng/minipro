@@ -76,7 +76,7 @@ Page({
   },
   showImg(url){
     wx.previewImage({
-      urls: ['http://i1.bvimg.com/665124/bb51c8b74552988f.png'],
+      urls: ['https://www.lyytc.cn/images/dashang.png'],
     })
   },
   onShareAppMessage() {
