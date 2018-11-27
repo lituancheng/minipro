@@ -7,6 +7,7 @@
   <button wx:if="{{!haveHelp}}" class='help-btn' hover-class='help-btn-hover' bindtap='toHelp'>助力好友加速</button>
   <button wx:else class='have-help-btn'>已助力</button>
   <button class='me-too-btn' hover-class='me-too-btn' bindtap='iWantIt'>我也要抢房</button>
+  <ad unit-id="adunit-11f260e3502b190d"></ad>
   <view class='helpers_title'>
     好友助力列表
   </view>

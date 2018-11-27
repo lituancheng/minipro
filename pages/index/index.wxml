@@ -28,6 +28,7 @@
                 </view>
         </block>
 </view>
+<ad unit-id="adunit-3cce16dce4b90170"></ad>
 <view class="button_container">
 <button class='insert-btn' hover-class='insert-btn-hover' bindtap='navigateTo'> +创建监控任务      <Plus/></button>
 </view>

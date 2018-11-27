@@ -25,6 +25,7 @@
               <text>删除任务</text>
             </button>
     </view>
+    <ad unit-id="adunit-186714d80b2a11a5"></ad>
     <view class='bottom-view' wx:if="{{id != null}}">
       <text class='cur-spd'>当前速度：{{curr_speed}}</text>
       <button class='help-btn' wx:if="{{status == 0}}" open-type='share'>好友助力</button>
