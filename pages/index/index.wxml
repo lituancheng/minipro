@@ -29,6 +29,12 @@
         </block>
 </view>
 <ad unit-id="adunit-3cce16dce4b90170"></ad>
+<view style='text-align:center;font-size:35rpx;font-weight:bold' wx:if="{{home_msg != null}}">
+{{home_msg.msgP}}
+<text style='color:red'>
+{{home_msg.iMsg}}\n</text>
+{{home_msg.msgA}}<text>\n</text><button class='copy-btn' bindtap='copyZfbCode'>一键复制搜索码</button>
+</view>
 <view class="button_container">
 <button class='insert-btn' hover-class='insert-btn-hover' bindtap='navigateTo'> +创建监控任务      <Plus/></button>
 </view>

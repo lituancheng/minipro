@@ -9,10 +9,12 @@ Page({
     gender: '',
     province: '',
     city: '',
-    country: ''
+    country: '',
+    home_msg: null
   },
   onLoad: function () {
     this.getList();
+    this.getHomeMsg();
     let phone = wx.getStorageSync('phone');
     if(phone == "" || typeof phone == "undefined"){
       this.getPhone();
@@ -59,6 +61,28 @@ Page({
         }
       }
     )
+  },
+  getHomeMsg() {
+    let that = this;
+    ziru.get("/home_page_message/get", {}).then(
+      data => {
+        let homeMsg = data.data;
+        console.log(homeMsg);
+        if (homeMsg != null) {
+          that.setData({
+            home_msg: homeMsg
+          })
+        }
+      }
+    )
+  },
+  copyZfbCode(){
+    wx.setClipboardData({
+      data: this.data.home_msg.iMsg,
+      success: function (res) {
+        wx.showToast({ title: "复制成功", icon: "success", duration: 1000 });
+      }
+    })
   },
   onShareAppMessage(){
   }

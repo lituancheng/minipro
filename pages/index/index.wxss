@@ -9,7 +9,7 @@
   box-sizing: border-box;
 }
 .insert-btn{
-  margin-top: 30px;
+  margin-top: 10px;
   width: 80%;
   background-color: rgb(252, 126, 67);
   color: white;
@@ -130,4 +130,12 @@ page{
         color: #444444;
         font-size: 24rpx;
         opacity: 0.5;
+}
+.copy-btn{
+  width: 270rpx;
+  height: 55rpx;
+  line-height: 55rpx;
+  display: inline-block;
+  background-color: rgb(213,211,210);
+  color: black;
 }
